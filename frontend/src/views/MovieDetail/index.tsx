@@ -6,7 +6,7 @@ const View = () => {
   const { movie } = ViewController();
 
   return (
-    <div className="bg-zinc-900 h-screen flex flex-col items-center">
+    <main className="bg-zinc-900 h-screen flex flex-col items-center">
       <LinkButton to="/" text={'Go Back'} />
       <div className="bg-zinc-300 flex flex-col w-2/3 justify-content items-center mt-2 p-4">
         <h1 className="text-3xl font-bold ">{movie?.Title}</h1>
@@ -25,7 +25,7 @@ const View = () => {
         <li>Awards: {movie?.Awards}</li>
         <li>BoxOffice: {movie?.BoxOffice}</li>
       </ul>
-    </div>
+    </main>
   );
 };
 export default View;

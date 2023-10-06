@@ -7,7 +7,7 @@ const View = () => {
   const { movies, isMoviesLoading, handleFilterText } = ViewController();
 
   return (
-    <div className="bg-zinc-900 h-full justify-center flex flex-col items-center">
+    <main className="bg-zinc-900 h-full justify-center flex flex-col items-center">
       <h1
         className="
       text-2xl font-bold text-gray-100
@@ -31,9 +31,11 @@ const View = () => {
               {movies?.map((movie) => (
                 <div
                   key={movie.Title}
-                  className="block p-2 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
+                  className="flex flex-col justify-center sm:block p-2 rounded-lg bg-neutral-700"
                 >
-                  <MoviePoster link={movie.Poster} />
+                  <div className="m-auto flex justify-center">
+                    <MoviePoster link={movie.Poster} />
+                  </div>
                   <div className="p-6">
                     <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                       {movie.Title} - {movie.imdbRating}
@@ -49,7 +51,7 @@ const View = () => {
           </>
         )}
       </>
-    </div>
+    </main>
   );
 };
 
