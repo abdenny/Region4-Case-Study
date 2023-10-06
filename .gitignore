@@ -11,16 +11,13 @@ frontend/coverage
 # production
 frontend/build
 
-# misc
-frontend/.DS_Store
-frontend/.env.local
-frontend/.env.development.local
-frontend/.env.test.local
-frontend/.env.production.local
-
 frontend/npm-debug.log*
 frontend/yarn-debug.log*
 frontend/yarn-error.log*
 
 # Tailwind processed CSS 
 frontend/index.css
+
+backend/db
+
+.env
