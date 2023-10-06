@@ -1,7 +1,7 @@
 const Loading = () => {
   return (
-    <div className="flex items-center flex-col justify-center w-full bg-zinc-900 h-screen ">
-      <div className="flex justify-center items-center space-x-1 text-2xl text-gray-200">
+    <div className="flex items-center flex-col justify-center w-full h-screen ">
+      <div className="flex justify-center items-center space-x-1 text-2xl text-black">
         <svg
           fill="none"
           className="w-12 h-12 animate-spin"

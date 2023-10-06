@@ -7,14 +7,8 @@ const View = () => {
   const { movies, isMoviesLoading, handleFilterText } = ViewController();
 
   return (
-    <main className="bg-zinc-900 h-full justify-center flex flex-col items-center">
-      <h1
-        className="
-      text-2xl font-bold text-gray-100
-      "
-      >
-        IMBD Top 250 Movies
-      </h1>
+    <main className=" h-full justify-center flex flex-col items-center">
+      <h1 className="text-2xl font-bold text-black">IMDB Top 250 Movies</h1>
       <>
         {isMoviesLoading ? (
           <Loading />
@@ -31,18 +25,16 @@ const View = () => {
               {movies?.map((movie) => (
                 <div
                   key={movie.Title}
-                  className="flex flex-col justify-center sm:block p-2 rounded-lg bg-neutral-700"
+                  className="flex flex-col justify-center border-2 text-black	 sm:block p-2 rounded-lg "
                 >
                   <div className="m-auto flex justify-center">
                     <MoviePoster link={movie.Poster} />
                   </div>
                   <div className="p-6">
-                    <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                    <h5 className="mb-2 text-xl font-medium leading-tight ">
                       {movie.Title} - {movie.imdbRating}
                     </h5>
-                    <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                      {movie.Plot}
-                    </p>
+                    <p className="mb-4 text-base ">{movie.Plot}</p>
                     <LinkButton to={`/movie/${movie.imdbID}`} text={'View Details'} />
                   </div>
                 </div>

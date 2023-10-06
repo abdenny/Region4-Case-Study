@@ -6,14 +6,14 @@ const View = () => {
   const { movie } = ViewController();
 
   return (
-    <main className="bg-zinc-900 h-screen flex flex-col items-center">
+    <main className="h-screen flex flex-col items-center">
       <LinkButton to="/" text={'Go Back'} />
-      <div className="bg-zinc-300 flex flex-col w-2/3 justify-content items-center mt-2 p-4">
+      <div className="bg-zinc-300 flex flex-col w-3/4 sm:w-2/3 justify-content border-2 items-center rounded mt-2 p-4">
         <h1 className="text-3xl font-bold ">{movie?.Title}</h1>
         <MoviePoster link={movie?.Poster} />
         <p className="px-6">Plot: {movie?.Plot}</p>
       </div>
-      <ul className="bg-zinc-200 flex flex-col flex-grow w-2/3 p-4">
+      <ul className="bg-zinc-200 flex flex-col flex-grow border-2 rounded w-3/4 sm:w-2/3  p-4">
         <li>Year released: {movie?.Year}</li>
         <li>Rated: {movie?.Rated}</li>
         <li>Released: {movie?.Released}</li>
