@@ -1,9 +1,11 @@
 import { LinkButton } from 'components/LinkButton';
 import { MoviePoster } from 'components/MoviePoster';
 import ViewController from './controller';
+import Loading from 'components/Loading';
 
 const View = () => {
-  const { movies } = ViewController();
+  const { movies, isMoviesLoading, handleFilterText } = ViewController();
+
   return (
     <div className="bg-zinc-900 h-full justify-center flex flex-col items-center">
       <h1
@@ -11,25 +13,42 @@ const View = () => {
       text-2xl font-bold text-gray-100
       "
       >
-        IMBD Top 250
+        IMBD Top 250 Movies
       </h1>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-cols-1 p-4">
-        {movies.map((movie) => (
-          <div
-            key={movie.Title}
-            className="block p-2 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
-          >
-            <MoviePoster link={movie.Poster} />
-            <div className="p-6">
-              <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                {movie.Title} - {movie.imdbRating}
-              </h5>
-              <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">{movie.Plot}</p>
-              <LinkButton to={`/movie/${movie.imdbID}`} text={'View Details'} />
+      <>
+        {isMoviesLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <input
+              type="search"
+              name="search"
+              placeholder="Filter by movie title"
+              onChange={handleFilterText}
+              className="bg-white flex justify-start w-72 text-gray-700 h-12 px-2 mx-10 md:mx-16 my-2 rounded-md text-md border-2 focus:outline-blue-500 focus:border-0"
+            />
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-cols-1 p-4">
+              {movies?.map((movie) => (
+                <div
+                  key={movie.Title}
+                  className="block p-2 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
+                >
+                  <MoviePoster link={movie.Poster} />
+                  <div className="p-6">
+                    <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                      {movie.Title} - {movie.imdbRating}
+                    </h5>
+                    <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                      {movie.Plot}
+                    </p>
+                    <LinkButton to={`/movie/${movie.imdbID}`} text={'View Details'} />
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
-      </div>
+          </>
+        )}
+      </>
     </div>
   );
 };

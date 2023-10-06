@@ -1,6 +1,10 @@
-import { Movies } from 'types';
+import { Movies, Movie } from 'types';
 
-export interface MoviesViewModelInterface {
-  movies: Movies;
+export interface AllMoviesViewModelInterface {
+  movies?: Movies;
   isMoviesLoading: boolean;
+}
+export interface MovieDetailsViewModelInterface {
+  movie?: Movie;
+  isMovieLoading: boolean;
 }

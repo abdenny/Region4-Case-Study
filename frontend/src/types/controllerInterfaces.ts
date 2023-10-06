@@ -1,10 +1,12 @@
 import { Movie, Movies } from 'types';
 
 export interface AllMoviesControllerInterface {
-  movies: Movies;
+  movies?: Movies;
   isMoviesLoading: boolean;
+  handleFilterText: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface MovieDetailControllerInterface {
-  movie: Movie | undefined;
+  movie?: Movie;
+  isMovieLoading: boolean;
 }
