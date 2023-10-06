@@ -15,18 +15,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js and Yarn
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14
 
       - name: Install Dependencies
         run: |
-          yarn install
+          npm install
 
       - name: Run Tests
         run: |
-          yarn test  # Adjust the command based on your testing setup
+          npm run test  # Adjust the command based on your testing setup
 
   build:
     runs-on: ubuntu-latest
@@ -38,18 +38,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js and Yarn
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 14
 
       - name: Install Dependencies
         run: |
-          yarn install
+          npm install
 
       - name: Build React App
         run: |
-          yarn build
+          npm run build
 
   deploy:
     runs-on: ubuntu-latest
