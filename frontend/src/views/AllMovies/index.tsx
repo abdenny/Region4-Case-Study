@@ -24,7 +24,7 @@ const View = () => {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 grid-cols-1 p-4">
               {movies?.map((movie) => (
                 <div
-                  key={movie.Title}
+                  key={movie.imdbID}
                   className="flex flex-col justify-center border-2 text-black	 sm:block p-2 rounded-lg "
                 >
                   <div className="m-auto flex justify-center">

@@ -1,6 +1,6 @@
 # Region 4 Case Study
 
-Details about this project can be found in the case study document.
+Details about this project can be found in the [case study document](https://drive.google.com/file/d/1pvskVpklaaIR1YaCYtAcjOgy17KaAQO0/view?usp=drive_link).
 
 ## Technical Specs
 
